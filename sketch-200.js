@@ -1,13 +1,13 @@
 const canvasSketch = require("canvas-sketch");
 const random = require("canvas-sketch-util/random");
 const settings = {
-  dimensions: [2048, 2048],
+  dimensions: [8192, 8192],
   animate: true,
 };
 
 const sketch = ({ context, width, height }) => {
   const agents = [];
-  for (let i = 0; i < 8000; i++) {
+  for (let i = 0; i < 150000; i++) {
     const x = random.range(0, width);
     const y = random.range(0, height);
     agents.push(new Agent(x, y));
@@ -32,7 +32,7 @@ class Vector {
 class Agent {
   constructor(x, y) {
     this.pos = new Vector(x, y);
-    this.vel = new Vector(random.range(-1, 1), random.range(-1, 1));
+    this.vel = new Vector(random.range(-1, 15), random.range(-1, 15));
     this.radius = random.range(4, 30);
   }
 
